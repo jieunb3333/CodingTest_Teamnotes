@@ -1,0 +1,15 @@
+# 주어진 1차원 그래프(인접행렬) 입력값을 깊이우선탐색을 할 때 사용.
+
+graph=[] # 인접행렬
+visited=[False]*(n+1) # n:노드의 개수
+
+# 스택대신 재귀함수를 이용.
+def dfs(graph, v, visited):
+  visited[v] = True
+  # 방문을 표기하고 추후에 방문 할 수 없도록 함.
+
+  for i in graph[v]:
+    # 노드 v와 인접한 노드를 찾아냄.
+    if visited[i]==False:
+      # 인접노드가 아직 방문이 되지않은 상태일 경우 방문.
+      dfs(graph,i,visited)
