@@ -1,0 +1,12 @@
+# 시간 복잡도 O(N2)
+# 최선 시간 복잡도 O(N) => 거의 정렬이 되어있는 상황
+
+array = []
+for i in range(1, len(array)):
+  for j in range(i,0,-1):
+    if array[j]<array[j-1]:
+      array[j], array[j-1] = array[j-1], array[j]
+    else: break
+
+print(array)
+
